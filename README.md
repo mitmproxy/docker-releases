@@ -1,3 +1,6 @@
+[![Docker Hub](http://img.shields.io/badge/docker-hub-brightgreen.svg?style=flat)](https://hub.docker.com/r/mitmproxy/releases/)
+
+
 # docker-releases
 Docker releases for for the mitmproxy project
 
