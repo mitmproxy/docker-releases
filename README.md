@@ -1,29 +1,30 @@
-[![Docker Hub](http://img.shields.io/badge/docker-hub-brightgreen.svg?style=flat)](https://hub.docker.com/r/mitmproxy/releases/)
+# mitmproxy
 
+Containerized version of [mitmproxy](https://mitmproxy.org/), an interactive SSL-capable intercepting HTTP proxy.
 
-# docker-releases
-Docker releases for for the mitmproxy project
-
-# Download
-
-Pull the release you'd like from [Docker hub](https://hub.docker.com/r/mitmproxy/releases/). The release tags can be seen [here](https://hub.docker.com/r/mitmproxy/releases/tags/).
+# Usage
 
 ```sh
-$ docker pull mitmproxy/releases:0.14
+$ docker run --rm -it [-v ~/.mitmproxy:/home/mitmproxy/.mitmproxy] -p 8080:8080 mitmproxy/releases
+```
+The *volume mount* is optional: It's to store the generated CA certificates.
+
+Once started, mitmproxy listens as a HTTP proxy on `localhost:8080`:
+```sh
+$ http_proxy=http://localhost:8080/ curl http://example.com/
+$ https_proxy=http://localhost:8080/ curl -k https://example.com/
 ```
 
-# Example
-
-With shared network with your host (e.g., on OS X and using `docker-machine`)
+You can also start `mitmdump` by just adding that to the end of the command-line:
 
 ```sh
-$ docker run -t -i --rm --net="host" mitmproxy/releases:0.14 mitmdump
-192.168.99.1:59289: clientconnect
-192.168.99.1 GET https://www.google.com/
- << 200 OK 187.61kB
- 192.168.99.1:59289: clientdisconnect
-
-# in another window/session...
-$ https_proxy="http://$(docker-machine ip default):8080" curl -k -L https://www.google.com
+$ docker run --rm -it -p 8080:8080 mitmproxy/releases mitmdump
 ```
 
+# Tags
+
+The available release tags can be seen [here](https://hub.docker.com/r/mitmproxy/releases/tags/).
+
+---
+
+Thanks to [Werner Beroux](https://github.com/wernight) and [David Weinstein](https://github.com/dweinstein) for their invaluable help with the mitmproxy Docker images!
