@@ -18,12 +18,12 @@ $ https_proxy=http://localhost:8080/ curl -k https://example.com/
 You can also start `mitmdump` by just adding that to the end of the command-line:
 
 ```sh
-$ docker run --rm -it -p 8080:8080 mitmproxy/releases mitmdump
+$ docker run --rm -it -p 8080:8080 mitmproxy/mitmproxy mitmdump
 ```
 
 # Tags
 
-The available release tags can be seen [here](https://hub.docker.com/r/mitmproxy/releases/tags/).
+The available release tags can be seen [here](https://hub.docker.com/r/mitmproxy/mitmproxy/tags/).
 
 ---
 
