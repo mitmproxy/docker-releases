@@ -21,6 +21,8 @@ You can also start `mitmdump` by just adding that to the end of the command-line
 $ docker run --rm -it -p 8080:8080 mitmproxy/mitmproxy mitmdump
 ```
 
+For further details, please consult the mitmproxy [documentation](http://docs.mitmproxy.org/en/stable/).
+
 # Tags
 
 The available release tags can be seen [here](https://hub.docker.com/r/mitmproxy/mitmproxy/tags/).
