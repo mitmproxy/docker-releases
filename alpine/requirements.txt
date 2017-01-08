@@ -18,7 +18,7 @@ itsdangerous==0.24
 Jinja2==2.8
 jsbeautifier==1.6.4
 MarkupSafe==0.23
-mitmproxy==1.0.1
+mitmproxy==1.0.2
 passlib==1.7.0
 pathtools==0.1.2
 Pillow==3.4.2
